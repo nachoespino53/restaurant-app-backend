@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
+    
+    
     def index
-        render json: Order.all
+        @orders = Order.all
+        render json: @orders.to_json(only: [:id, :first_name, :last_name, :created_at], include: [order_items: {only: [:item_id, :quantity]}])
     end
 
     def create
@@ -8,6 +11,7 @@ class OrdersController < ApplicationController
         if @order.save
             render json: order
         else 
+            render status: 304
         end
     end
 
@@ -20,7 +24,7 @@ class OrdersController < ApplicationController
     private
 
     def order_params
-        params.require(:order).permit(order_items_attributes: [:item_id, :quantity])
+        params.require(:order).permit(:first_name, :last_name, order_items_attributes: [:item_id, :quantity])
     end
 
 end
