@@ -26,10 +26,10 @@ full_soup = Item.create({name: "Full Ministrone Soup", description: "Breaded Cal
 
 # Orders
 
-order1 = Order.create({first_name: "Ignacio", last_name: "Espino", order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})
-order2 = Order.create({first_name: "Michele", last_name: "Kim", order_items_attributes: [{item_id: 2, quantity: 2}, {item_id: 2, quantity: 5}]})
-order3 = Order.create({first_name: "Absolem", last_name: "Cherinet", order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})
-order4 = Order.create({first_name: "John", last_name: "Smith", order_items_attributes: [{item_id: 4, quantity: 2}, {item_id: 4, quantity: 5}]})
-order5 = Order.create({first_name: "Teresa", last_name: "Espino", order_items_attributes: [{item_id: 3, quantity: 2}, {item_id: 2, quantity: 5}]})
-order6 = Order.create({first_name: "Erica", last_name: "Espino", order_items_attributes: [{item_id: 5, quantity: 2}, {item_id: 7, quantity: 5}]})
-order7 = Order.create({first_name: "Judy", last_name: "Espino", order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})
+order1 = Order.create({first_name: "Ignacio", last_name: "Espino", total: 10, order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})
+order2 = Order.create({first_name: "Michele", last_name: "Kim", total: 20, order_items_attributes: [{item_id: 2, quantity: 2}, {item_id: 2, quantity: 5}]})
+order3 = Order.create({first_name: "Absolem", last_name: "Cherinet", total: 30, order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})
+order4 = Order.create({first_name: "John", last_name: "Smith", total: 40, order_items_attributes: [{item_id: 4, quantity: 2}, {item_id: 4, quantity: 5}]})
+order5 = Order.create({first_name: "Teresa", last_name: "Espino", total: 50, order_items_attributes: [{item_id: 3, quantity: 2}, {item_id: 2, quantity: 5}]})
+order6 = Order.create({first_name: "Erica", last_name: "Espino", total: 60, order_items_attributes: [{item_id: 5, quantity: 2}, {item_id: 7, quantity: 5}]})
+order7 = Order.create({first_name: "Judy", last_name: "Espino", total: 70, order_items_attributes: [{item_id: 1, quantity: 2}, {item_id: 2, quantity: 5}]})

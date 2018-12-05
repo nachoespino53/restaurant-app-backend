@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_202322) do
+ActiveRecord::Schema.define(version: 2018_12_05_033244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_202322) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "picked_up", default: false
+    t.integer "phone_number"
+    t.float "total"
   end
 
 end
