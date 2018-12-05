@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
     has_many :order_items
-    validates :phone_number, length: { is: 9}
-    validates :phone_number, numericality: { only_integer: true }
+    # validates :phone_number, length: { is: 9 }
+    # validates :phone_number, numericality: { only_integer: true }
     accepts_nested_attributes_for :order_items
 
     def calculate_total_price
