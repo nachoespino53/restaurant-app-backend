@@ -2,16 +2,22 @@ class OrdersController < ApplicationController
     
     
     def index
-        @orders = Order.all
-        render json: @orders.to_json(only: [:id, :first_name, :last_name, :phone_number, :total, :created_at], include: [order_items: {only: [:item_id, :quantity]}])
+        if request.headers["onlyUser"]
+            @orders = Order.select { |order| order.user_id == current_user.id}
+            render json: @orders.to_json(only: [:id, :first_name, :last_name, :phone_number, :total, :created_at], include: [order_items: {only: [:item_id, :quantity]}])
+        else
+            @orders = Order.all
+            render json: @orders.to_json(only: [:id, :first_name, :last_name, :phone_number, :total, :created_at], include: [order_items: {only: [:item_id, :quantity]}])
+        end
     end
 
     def create
         begin
             @order = Order.new(order_params)
+            @order.user_id = current_user.id
             @order.total = @order.calculate_total_price
             if @order.save
-                render json: order
+                render json: @order.to_json
             else 
                 render status: 304
             end

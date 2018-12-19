@@ -15,9 +15,20 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
+    def update
+        @user = User.find(current_user.id)
+        @user.update(user_update_params)
+        @user.save
+        render json: @user
+    end
+
     private
 
     def user_params
         params.require(:user).permit(:username, :password, :email, :phone_number, :first_name, :last_name)
+    end
+
+    def user_update_params
+        params.require(:user).permit(:password, :phone_number, :first_name, :last_name)
     end
 end

@@ -52,3 +52,9 @@ gem "jwt", "~> 2.1"
 gem "active_model_serializers", "~> 0.10.7"
 
 gem "faker", "> 1.9"
+
+# Amazon Web Services
+gem 'aws-sdk-s3'
+# gem 'fog-aws'
+gem 'carrierwave'
+gem 'fog'
