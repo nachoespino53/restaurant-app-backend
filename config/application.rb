@@ -1,6 +1,6 @@
 require_relative 'boot'
-require 'carrierwave/orm/activerecord'
-require 'fog'
+# require 'carrierwave/orm/activerecord'
+# require 'fog'
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"

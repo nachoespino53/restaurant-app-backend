@@ -55,6 +55,5 @@ gem "faker", "> 1.9"
 
 # Amazon Web Services
 gem 'aws-sdk-s3'
-# gem 'fog-aws'
 gem 'carrierwave'
 gem 'fog'
