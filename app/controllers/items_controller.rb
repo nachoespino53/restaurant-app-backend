@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
-        render json: Category.all.to_json(only: [:id, :name], include: :items)
+        render json: Category.all.to_json(only: [:id, :name], include: [:items, :ingredients])
     end
 
     def create

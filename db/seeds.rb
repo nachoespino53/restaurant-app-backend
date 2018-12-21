@@ -64,6 +64,11 @@ seafood_pasta = Item.find_or_create_by({name: "Seafood Pasta", description: "Des
 veal_and_peppers = Item.find_or_create_by({name: "Veal & Peppers", description: "Description", price: 10, category_id: 4})
 calamari_in_red_sauce = Item.find_or_create_by({name: "Calamari in Red Sauce", description: "Description", price: 10, category_id: 4})
 
+# Pizza Items
+custom = Item.find_or_create_by({ name: "Custom Pizza", description: "Create Your Own", price: 12, category_id: 5 })
+combo = Item.find_or_create_by({ name: "Capozio's Combo", description: "Sausage, mushroom, onion, green pepper", price: 14, category_id: 5})
+taco = Item.find_or_create_by({name: "Taco Pizza", description: "Description", price: 14, category_id: 5})
+
 
 # item = Item.find_or_create_by({name: "item", description: "Description", price: 10, category_id: 2})
 
