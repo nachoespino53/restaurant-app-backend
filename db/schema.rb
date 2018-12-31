@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_150822) do
+ActiveRecord::Schema.define(version: 2018_12_28_224118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_150822) do
     t.boolean "picked_up", default: false
     t.float "total"
     t.integer "user_id"
+    t.string "status"
   end
 
   create_table "users", force: :cascade do |t|

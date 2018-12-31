@@ -17,4 +17,15 @@ class Order < ApplicationRecord
         end
         OrderItem.delete(array_of_ids)
     end
+
+    # Customer canceling order only if status is pending
+    def cancel_order
+        if self.status.downcase == "pending"
+            self.status = "Canceled"
+            self.save
+            self
+        else 
+            "Error in Order Model"
+        end
+    end
 end
