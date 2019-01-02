@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
             @order = Order.new(order_params)
             @order.user_id = current_user.id
             @order.total = @order.calculate_total_price
+            @order.status = "Pending"
             if @order.save
                 render json: @order.to_json
             else 
