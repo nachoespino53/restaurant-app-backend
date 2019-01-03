@@ -2,8 +2,8 @@ class Api::V1::AuthController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def get_api
-      if request.headers["api"] == true
-        render json: ["*1","*2"]
+      if request.headers["api"]
+        render json: {aws1: "*1", aws2: "*2"}
       else
         render status: :unauthorized
       end
