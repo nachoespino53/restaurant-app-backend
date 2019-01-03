@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :update]
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      get '/api', to: 'auth#get_api'
     end
   end
 end

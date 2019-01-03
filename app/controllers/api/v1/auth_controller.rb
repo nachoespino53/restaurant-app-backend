@@ -1,5 +1,13 @@
 class Api::V1::AuthController < ApplicationController
     skip_before_action :authorized, only: [:create]
+
+    def get_api
+      if request.headers["api"] == true
+        render json: ["*1","*2"]
+      else
+        render status: :unauthorized
+      end
+    end
  
     def create
       @user = User.find_by(username: user_login_params[:username])
