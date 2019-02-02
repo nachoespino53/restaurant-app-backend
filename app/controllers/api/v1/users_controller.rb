@@ -16,18 +16,19 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def update
-        # byebug
+        byebug
         if request.headers["image"]
             @user = User.find(current_user.id)
-            @user.image_url = request.body
-            byebug
-            render json: "Got image"
+            file = request.body.open
+            @user.image_url = file
+            @user.store_image_url!
+            render json: @user.image_url_url
 
         elsif request.headers["user"]
-        # @user = User.find(current_user.id)
-        # @user.update(user_update_params)
-        # @user.save
-        render json: "success"
+            # @user = User.find(current_user.id)
+            # @user.update(user_update_params)
+            # @user.save
+            render json: "success"
         end
     end
 
