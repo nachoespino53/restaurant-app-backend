@@ -18,13 +18,12 @@ class Api::V1::UsersController < ApplicationController
     def update
         if request.headers["image"]
             @user = User.find(current_user.id)
-            file = params[:file].tempfile.open
-            @user.image = file
+            @user2 = User.find(current_user.id)
+            @user.image = params[:file].tempfile.open
             if @user.store_image! != nil
-                @user.image_url = @image_url
-                @user.image_url = nil
-                @user.save
-                render json: @user
+                @user2.image_url = @user.image_url
+                @user2.save
+                render json: @user2
             else
                 render json: "Failed to upload"
             end
