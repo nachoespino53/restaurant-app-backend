@@ -19,8 +19,9 @@ class Api::V1::UsersController < ApplicationController
         if request.headers["image"]
             @user = User.find(current_user.id)
             file = params[:file].tempfile.open
-            @user.image_url = file
-            if @user.store_image_url! != nil
+            @user.image = file
+            if @user.store_image! != nil
+                @user.image_url = @image_url
                 @user.image_url = nil
                 @user.save
                 render json: @user
