@@ -7,6 +7,5 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     validates :phone_number, length: { is: 10}
     validates :phone_number, numericality: { only_integer: true }
-    # attr_accessor :image_url
-    mount_uploader :image_url, ImageUploader
+    mount_uploader :image, ImageUploader
 end
