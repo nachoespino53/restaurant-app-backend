@@ -20,11 +20,12 @@ class Api::V1::UsersController < ApplicationController
             @user = User.find(current_user.id)
             file = params[:file].tempfile.open
             @user.image_url = file
-            if @user.store_image_url!
-                @user.image_url = @user.image_url_url
+            if @user.store_image_url! != nil
+                @user.image_url = nil
                 @user.save
                 render json: @user
             else
+                render json: "Failed to upload"
             end
 
         elsif request.headers["user"]
