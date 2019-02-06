@@ -7,3 +7,5 @@ CarrierWave.configure do |config|
     }
     config.fog_directory = "capozios"
 end
+
+# 
